@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Sign Up</title>
 </head>
+
 <body>
-    
+    <nav id="navbar" style="display: none;">
+        <div onclick="closeNav()">x</div>
+        <ul>
+            <a href="../home/index.html"></a>Home
+            <a href="../profile/index.html"></a>Profile
+            <a href="../signUp/index.html"></a>Login
+            <a></a>About
+    </nav>
+
+
+
+    <div id="burger" onclick="openNav()" style="display: block;">
+        <span class="iconbar first"></span>
+        <span class="iconbar second"></span>
+        <span class="iconbar third"></span>
+    </div>
+    <div id="miniProfile"></div>
+
+    <main>
+        <div id="quote">
+            <p>Keep your face always towards the sunshine and shadows will fall behind you</p>
+            <span>Walt Witham</span>
+        </div>
+
+        <section id="imageFeed">
+            <div class="image">
+                <img src="http://placekitten.com/400/400" alt="kitten">
+                <p>Hello World!</p>
+            </div>
+
+            <div class="image">
+                <img src="http://placekitten.com/400/400" alt="kitten">
+                <p>Hello World!</p>
+            </div>
+
+            <div class="image">
+                <img src="http://placekitten.com/400/400" alt="kitten">
+                <p>Hello World!</p>
+            </div>
+
+            <div class="image">
+                <img src="http://placekitten.com/400/400" alt="kitten">
+                <p>Hello World!</p>
+            </div>
+        </section>
+    </main>
+
 </body>
+
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="../../Global/js/global.js"></script>
+
 </html>
