@@ -5,7 +5,9 @@ body {
     max-width: 38rem;
     /* padding: 2rem;
     margin: auto; */
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Courier New", sans-serif;
+    background-color: #FEFFFF;
+
 }
 .navbar {
     margin: 0;
@@ -50,7 +52,14 @@ body {
     border: solid 1px black;
     min-height: 45%;
     min-width: 95%;
-    border-radius: 10%;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #DEF2F1;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
     
 }
 
@@ -67,28 +76,29 @@ form {
     flex-flow: column wrap;
     justify-content: space-between;
     margin: 10px 10px;
-    border-radius: 25px;
+    border-radius: 15px;
     width: 70%;
     height: 2em;
+    text-align: center;
 }
 
 .logIn button {
     width: 70%;
     height: 2em;
     background-image: linear-gradient(45deg, #008080 0%, #999f99 100%);
-    border-radius: 25px;
-    border-radius: 25px;
+    border-radius: 15px;
     margin: 5px 10px;
     transition: .4s;
     color: #fff;
+    font-family: "Courier New", sans-serif;
 }
 
 #login {
     width: 70%;
     height: 4em;
     background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
-    border-radius: 25px;
-    margin: 5px 10px;
+    border-radius: 15px;
+    margin: 10px 10px;
     transition: .4s;
     color: #fff;
 }
@@ -104,6 +114,27 @@ form {
     width: 71%;
     height: 4.1em;
 }
+
+::-webkit-input-placeholder {
+    text-align: center;
+    font-family: "Courier New", sans-serif;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    text-align: center;
+    font-family: "Courier New", sans-serif;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;
+    font-family: "Courier New", sans-serif;
+}
+
+:-ms-input-placeholder {
+    text-align: center;
+    font-family: "Courier New", sans-serif;
+}
+
 
 
 /* MEDIA QUERYS */
