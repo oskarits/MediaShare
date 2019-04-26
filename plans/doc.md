@@ -6,13 +6,13 @@
 * Users will need an invite code to join (First users get 32, their invites give 16 and so on)
 
 # Screens
-Main splash https://wireframe.cc/1UNHMf
-Log in - https://wireframe.cc/qCKVT5
-Main View - https://wireframe.cc/Ec7gfV
-  Sort - New
-  Sort - Top
-Profile (Settings) - https://wireframe.cc/ulAu30
-About - https://wireframe.cc/iUjiKAhttps://wireframe.cc/ulAu30
+* Main splash https://wireframe.cc/1UNHMf
+* Log in - https://wireframe.cc/qCKVT5
+* Main View - https://wireframe.cc/Ec7gfV
+  * Sort - New
+  * Sort - Top
+* Profile (Settings) - https://wireframe.cc/ulAu30
+* About - https://wireframe.cc/iUjiKA
 
 # Colors
 
