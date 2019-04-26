@@ -49,8 +49,8 @@ body {
     min-height: 60vh;
     display: flex;
     flex-flow: column wrap;
-    align-content: center;
-    justify-content: start;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 

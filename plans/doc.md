@@ -25,6 +25,7 @@ Profile
   ID
   email
   username *unique*
+  password
 
 Content
   ID
@@ -41,6 +42,7 @@ Content
   package.json
   node_modules
   main.js
+  tools
   global
     -global.css
     -global.js

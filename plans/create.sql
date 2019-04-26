@@ -2,6 +2,7 @@ create table Profile (
     user_id int AUTO_INCREMENT NOT NULL,
     email varchar(255) NOT NULL UNIQUE,
     username varchar(255) NOT NULL UNIQUE,
+    password varchar(255) NOT NULL,
     primary key(user_id)
 );
 
