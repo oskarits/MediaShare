@@ -8,7 +8,7 @@ const app = express();
 const db = require('./tools/db');
 const connection = db.connect();
 
-app.use(express.static('Components/home'));
+app.use(express.static('components/home'));
 app.post('/image',  upload.single('my-image'), (req, res) => {
     console.log(req.files);
     const response = {
