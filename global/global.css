@@ -6,3 +6,80 @@ Otto Söderlund */
 h1, h2, h3, h4, h5, p {
     font-family: 'Didact Gothic', sans-serif;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+html {
+    overflow: hidden;
+}
+
+/* NAVIGATION */
+
+
+#navbar {
+    margin: 20px 10px;
+    padding: 20px 10px;
+    text-decoration: none;
+    display: flex;
+    flex-flow: column-reverse wrap;
+    justify-content: center;
+    align-content: center;
+    position: fixed;
+    bottom: 40px;
+    left: 30px;
+    background-color: lightgrey;
+    border: 2px solid grey;
+    border-radius: 15px 15px 15px 0px;
+    width: 50%;
+}
+
+#navbar li {
+    margin: 10px 0;
+}
+
+#navbar ul {
+    padding: 0;
+}
+
+.iconbar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background: black;
+    margin: 5px;
+}
+
+.second {
+    width: 25px;
+}
+
+#navbar li {
+    display: block;
+    text-decoration: none;
+}
+
+#burger {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+}
+
+#closeBtn {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+}
+
+/* ///////////////////////////// */
