@@ -5,8 +5,8 @@ const express = require('express');
 const multer = require('multer');
 const upload = multer({ dest: './uploads' });
 const app = express();
-const db = require('./tools/db');
-const connection = db.connect();
+//const db = require('./tools/db');
+//const connection = db.connect();
 
 app.use(express.static('components/home'));
 app.post('/image',  upload.single('my-image'), (req, res) => {
