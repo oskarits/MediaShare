@@ -35,3 +35,21 @@ Content
   number of votes
   Time of Deletion
   No. of Reports (Queried by the hour)
+
+# Project Structure 
+  README.md
+  package.json
+  node_modules
+  main.js
+  global
+    -global.css
+    -global.js
+  components
+    home
+      -home.html/css/js
+    profile
+      -profile.html/css/js
+    signUp/logIn
+      -signUp/logIn.html/css/js
+    about
+      -about.html/css/js
