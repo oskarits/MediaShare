@@ -14,10 +14,6 @@
 /* Global styles */
 
 body {
-    max-width: 38rem;
-    /* padding: 2rem;
-    margin: auto; */
-    font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(to top, white 70%, teal 30%);
 }
 
