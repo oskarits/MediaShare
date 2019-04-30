@@ -102,7 +102,7 @@ body {
 
 #ctaButton {
     position: fixed;
-    bottom: 10px;
+    bottom: 35px;
     left: 70%;
     background-color: #db3236;
     height: 100px;
@@ -113,6 +113,7 @@ body {
     justify-content: center;
     align-content: center;
     box-shadow: 2px 2px 3px #000;
+    margin-bottom: 10px;
 }
 
 #ctaButton:hover {
