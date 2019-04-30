@@ -83,4 +83,32 @@ html {
     overflow: hidden;
 }
 
-/* ///////////////////////////// */
+/* ////////////CTA BUTTON/////////// */
+
+#ctaButton {
+    position: fixed;
+    bottom: 10px;
+    left: 70%;
+    background-color: #db3236;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    box-shadow: 2px 2px 3px #000;
+}
+
+#ctaButton:hover {
+    height: 105px;
+    width: 105px;
+    box-shadow: 4px 4px 5px #000;
+}
+
+.buttonContainer button {
+    background-color: #db3236;
+    color: white;
+    font-size: 3em;
+    border: none;
+}
