@@ -17,7 +17,6 @@ a:hover {
 }
 
 html {
-    overflow: hidden;
     background-color: #FEFEFE
 }
 
@@ -88,14 +87,14 @@ body {
     padding-bottom: 20px; */
     border: 1px solid black;
     border-radius: 5px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #closeBtn {
     margin-bottom: 20px;
     padding-bottom: 20px;
     
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* ////////////CTA BUTTON/////////// */
