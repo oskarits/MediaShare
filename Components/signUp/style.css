@@ -1,66 +1,27 @@
-h1, h2, h3, h4, h5, p {
-    font-family: 'Didact Gothic', sans-serif;
-}
-body {
-    max-width: 38rem;
-    /* padding: 2rem;
-    margin: auto; */
-    font-family: "Courier New", sans-serif;
-    background-color: #FEFFFF;
-
-}
-.navbar {
-    margin: 0;
-    padding: 0;
-}
-
-.iconbar {
-    display: block;
-    width: 22px;
-    height: 2px;
-    border-radius: 1px;
-    background: black;
-    margin: 5px;
-}
-
-.second {
-    width: 25px;
-}
-
-#navbar li {
-    display: block;
-    text-decoration: none;
-}
-
-#burger {
-    margin-bottom: 20px;
-}
-
 .main {
-    margin-top: 75%;
-    min-height: 100%;
+    /* margin-top: 75%; */
+    /* min-height: 100%; */
     display: flex;
+    flex-flow: column wrap;
     justify-content: center;
     align-content: center;
 }
 
 .container {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     justify-self: center;
     align-self: center;
-    border: solid 1px black;
-    min-height: 45%;
-    min-width: 95%;
+    /* border: solid 1px black; */
+    /* min-height: 80%; */
+    /* min-width: 95%; */
     border-radius: 15px;
-    position: relative;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: #DEF2F1;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-
-    
+    /* position: relative; */
+    box-shadow: 0 4px 8px 0 rgba(17, 5, 5, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #FFF;
+    /* top: 50%; */
+    /* -ms-transform: translateY(-50%);
+    transform: translateY(-50%); */
 }
 
 form { 
@@ -85,7 +46,7 @@ form {
 .logIn button {
     width: 70%;
     height: 2em;
-    background-image: linear-gradient(45deg, #008080 0%, #999f99 100%);
+    background-image: linear-gradient(45deg, #4885ed 0%, #4885ff 100%);
     border-radius: 15px;
     margin: 5px 10px;
     transition: .4s;
@@ -96,7 +57,7 @@ form {
 #login {
     width: 70%;
     height: 4em;
-    background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+    background-image: linear-gradient(45deg,  #f4c20d 0%,  #f4c30f 100%);
     border-radius: 15px;
     margin: 10px 10px;
     transition: .4s;
@@ -114,28 +75,6 @@ form {
     width: 71%;
     height: 4.1em;
 }
-
-::-webkit-input-placeholder {
-    text-align: center;
-    font-family: "Courier New", sans-serif;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-    text-align: center;
-    font-family: "Courier New", sans-serif;
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-    text-align: center;
-    font-family: "Courier New", sans-serif;
-}
-
-:-ms-input-placeholder {
-    text-align: center;
-    font-family: "Courier New", sans-serif;
-}
-
-
 
 /* MEDIA QUERYS */
 
