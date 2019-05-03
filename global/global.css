@@ -116,11 +116,11 @@ body {
     margin-bottom: 10px;
 }
 
-#ctaButton:hover {
+/* #ctaButton:hover {
     height: 105px;
     width: 105px;
     box-shadow: 4px 4px 5px #000;
-}
+} */
 
 .buttonContainer button {
     background-color: #db3236;
