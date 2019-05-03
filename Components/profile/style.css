@@ -14,10 +14,6 @@
 /* Global styles */
 
 body {
-    max-width: 38rem;
-    /* padding: 2rem;
-    margin: auto; */
-    font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(to top, white 70%, teal 30%);
 }
 
@@ -32,10 +28,7 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     align-content: center;
-    margin-top: 40%;
-    /* position: absolute; */
-    top: 17%;
-    left: 23%;
+    
 }
 
 .profilePic img {
@@ -43,14 +36,18 @@ body {
     border: 3px solid grey;
     height: 200px;
     width: 200px;
+    margin-top: 40%;
+    top: 17%;
+    left: 23%;
+
 }
 
 .data {
     min-height: 60vh;
     display: flex;
     flex-flow: column wrap;
-    align-content: center;
-    justify-content: start;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 

@@ -9,6 +9,11 @@ const app = express();
 //const connection = db.connect();
 
 app.use(express.static('components/home'));
+// express.static('components/)
+// name all .html's differently
+// make the index.html the splash page showing the newest post and a summary of the site
+app.use('/global', express.static('./global'));
+
 app.post('/image',  upload.single('my-image'), (req, res) => {
     console.log(req.files);
     const response = {
@@ -18,6 +23,7 @@ app.post('/image',  upload.single('my-image'), (req, res) => {
     res.send(response);
 });
 app.use('/image', (req, res, next) => {
+
     const data = [
         'post_id',
         'poster_id',
@@ -27,7 +33,7 @@ app.use('/image', (req, res, next) => {
         'time_of_del',
         'no_reports',
     ];
-    
+   // media insert 
 });
 
 app.listen(3000);
