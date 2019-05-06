@@ -151,6 +151,7 @@ button {
         flex-flow: column wrap;
         justify-content: center;
         align-items: center;
+        min-width: 100vw;
     }
 
     #homeMain {
@@ -159,6 +160,10 @@ button {
         justify-content: center;
         align-items: center;
     }
+
+    /* #imageFeed .image {
+        width: 
+    } */
 
     
 }
