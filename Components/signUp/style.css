@@ -1,27 +1,25 @@
-.main {
-    /* margin-top: 75%; */
-    /* min-height: 100%; */
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-content: center;
+:root {
+    --main-color: #34495E;
 }
 
-.container {
+
+.main {
     display: flex;
     flex-flow: row wrap;
-    justify-self: center;
-    align-self: center;
-    /* border: solid 1px black; */
-    /* min-height: 80%; */
-    /* min-width: 95%; */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to top, white 50%, var(--main-color) 50%);
+}
+
+.containerLogIn {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    align-items: center;
     border-radius: 15px;
-    /* position: relative; */
     box-shadow: 0 4px 8px 0 rgba(17, 5, 5, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: #FFF;
-    /* top: 50%; */
-    /* -ms-transform: translateY(-50%);
-    transform: translateY(-50%); */
 }
 
 form { 
@@ -29,57 +27,54 @@ form {
     flex-flow: column wrap;
     justify-items: center;
     align-items: center;
-    
 }
 
 .logIn input {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
-    margin: 10px 10px;
-    border-radius: 15px;
-    width: 70%;
+    margin: 10px 50px;
+    /* border-radius: 15px; */
+    border: none;
+    border-bottom: solid .5px black;
+    /* width: 70%; */
     height: 2em;
-    text-align: center;
+    width: 70%
 }
 
-.logIn button {
-    width: 70%;
-    height: 2em;
-    background-image: linear-gradient(45deg, #4885ed 0%, #4885ff 100%);
-    border-radius: 15px;
+#signUpButton {
+    background-color: var(--main-color);
     margin: 5px 10px;
-    transition: .4s;
     color: #fff;
-    font-family: "Courier New", sans-serif;
-}
-
-#login {
     width: 70%;
-    height: 4em;
-    background-image: linear-gradient(45deg,  #f4c20d 0%,  #f4c30f 100%);
-    border-radius: 15px;
+    padding: 15px 15px;
+}
+
+#logInButton {
+    width: 70%;
     margin: 10px 10px;
+    width: 70%;
+    margin-top: 50px;
+}
+
+#logInButton a {
+    color: darkblue;
+}
+
+#logInButton a:hover {
+    text-decoration: underline;
     transition: .4s;
-    color: #fff;
-}
-
-#login:hover {
-    background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
-    width: 71%;
-    height: 4.1em;
-}
-
-.logIn button:hover {
-    background-image: linear-gradient(45deg, #008080 0%, #999900 100%);
-    width: 71%;
-    height: 4.1em;
 }
 
 /* MEDIA QUERYS */
 
-/* @media (max-width: 767px) { 
-    .navbar{
-        display: none;
+@media only screen and (min-width: 700px) { 
+    .containerLogIn {
+        height: 500px;
+        width: 700px;
+        background-image: url('/Assets/img/thumbsUp.jpeg');
+        background-position-x: 300px;
+        background-position-y: 100px;
+        background-repeat: no-repeat;
     }
-} */
+}

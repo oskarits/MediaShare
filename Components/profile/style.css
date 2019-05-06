@@ -8,6 +8,9 @@
 /* Color Scheme 
     #454545 - black for text
 */
+:root {
+    --main-color: #34495E;
+}
 
 
 
@@ -27,7 +30,7 @@ body {
 }
 
 .profilePic {
-    background: linear-gradient(to top, white 50%, teal 50%);
+    background: linear-gradient(to top, white 50%, var(--main-color) 50%);
     background-size: auto;
     display: flex;
     flex-flow: row wrap;
