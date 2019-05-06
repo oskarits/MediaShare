@@ -100,10 +100,18 @@ body {
 
 /* ////////////CTA BUTTON/////////// */
 
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: end;
+    align-content: flex-end;
+    min-width: 100%;
+}
+
 #ctaButton {
     position: fixed;
     bottom: 35px;
-    left: 70%;
+    right: 0;
     background-color: #db3236;
     height: 100px;
     width: 100px;
@@ -113,7 +121,7 @@ body {
     justify-content: center;
     align-content: center;
     box-shadow: 2px 2px 3px #000;
-    margin-bottom: 10px;
+    margin: 10px 20px;
 }
 
 /* #ctaButton:hover {
@@ -127,4 +135,20 @@ body {
     color: white;
     font-size: 3em;
     border: none;
+}
+
+@media only screen and (min-width: 425px) {
+    html {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #homeMain {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        
+    }
 }
