@@ -3,6 +3,10 @@ Oskari Sieranen
 Tuomas Paavolainen
 Otto Söderlund */
 
+:root {
+    --main-color: #34495E;
+}
+
 h1, h2, h3, h4, h5, p {
     font-family: 'Didact Gothic', sans-serif;
 }
@@ -22,9 +26,13 @@ html {
 }
 
 body {
-    max-width: 38rem;
+    /* max-width: 38rem; */
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+    border: none;
 }
 
 /* NAVIGATION */
@@ -35,7 +43,7 @@ body {
     padding: 0;
     text-decoration: none;
     display: none;
-    flex-flow: column-reverse wrap;
+    flex-flow: column wrap;
     justify-items: center;
     align-items: center;
     justify-self: center;
@@ -147,12 +155,10 @@ body {
 
     #homeMain {
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: column wrap;
         justify-content: center;
-        
+        align-items: center;
     }
 
-    #profilePage {
-        /* min-width: 100%; */
-    }
+    
 }

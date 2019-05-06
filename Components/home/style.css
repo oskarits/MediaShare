@@ -5,9 +5,11 @@
 */
 
 
-/* Color Scheme 
-    #454545 - black for text
-*/
+/* Color Scheme  */
+:root {
+    --main-color: #34495E;
+}
+
 
 
 
@@ -15,25 +17,6 @@
 
 h1, h2, h3, h4, h5, p {
     font-family: 'Didact Gothic', sans-serif;
-}
-
-body {
-    max-width: 38rem;
-    /* padding: 2rem;
-    margin: auto; */
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#miniProfile {
-    background-color: pink;
-    border-radius: 50%;
-    float: right;
-    height: 10px;
-    widows: 10px;;
-}
-
-main {
-    top: 40%;
 }
 
 #quote {
@@ -53,6 +36,10 @@ main {
 #imageFeed {
     max-width: 100%;
     height: 100%;
+}
+
+.image {
+    width: 70%;
 }
 
 .image p {
