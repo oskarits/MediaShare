@@ -5,19 +5,11 @@
 */
 
 
-/* Color Scheme 
-    #454545 - black for text
-*/
 :root {
     --main-color: #34495E;
 }
 
-
-
-/* Global styles */
-
 body {
-    /* background: linear-gradient(to top, white 70%, teal 30%); */
     min-width: 100%;
     min-height: 100%;
     margin: 0;
@@ -48,13 +40,10 @@ body {
 }
 
 .data {
-    /* min-height: 60vh; */
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
-    /* padding: 15% 0; */
-    /* margin-top: 100px; */
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -62,12 +51,3 @@ body {
 .data p {
     margin: 10px 40px;
 }
-
-
-
-
-/* Media Query */
-
-
-
-/* Desktop */
