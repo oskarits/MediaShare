@@ -24,6 +24,10 @@
     position: fixed;
 }
 
+.header p {
+    font-size: 1.5em;
+}
+
 .line {
     height: 1px;
     width: 100px;
