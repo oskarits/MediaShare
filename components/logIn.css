@@ -4,7 +4,7 @@
 
 
 .main {
-    padding: 20px 0;
+    padding: 20px 10px;
     min-height: 100vh;
     background: linear-gradient(to top, white 50%, var(--main-color) 50%);
     display: flex;
@@ -38,6 +38,8 @@
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(17, 5, 5, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: #FFF;
+    padding: 10px;
+    margin: 0 10px;;
 }
 
 form { 
