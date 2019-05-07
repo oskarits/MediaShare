@@ -1,17 +1,19 @@
 'use strict';
 
-//dotenv require
+//TODO dotenv require
 const express = require('express');
 const multer = require('multer');
 const upload = multer({ dest: './uploads' });
 const app = express();
 //const db = require('./tools/db');
 //const connection = db.connect();
+const sql = require('./tools/sql_tools');
 
+//
 app.use(express.static('components/home'));
 // express.static('components/)
-// name all .html's differently
 // make the index.html the splash page showing the newest post and a summary of the site
+// remove all folders from components and make all in one folder
 app.use('/global', express.static('./global'));
 
 app.post('/image',  upload.single('my-image'), (req, res) => {
@@ -26,7 +28,7 @@ app.use('/image', (req, res, next) => {
 
     const data = [
         'post_id',
-        'poster_id',
+        'user_id',
         'content',
         'img_text',
         'no_votes',
@@ -34,6 +36,7 @@ app.use('/image', (req, res, next) => {
         'no_reports',
     ];
    // media insert 
+   sql.insert(data, connection, res);
 });
 
 app.listen(3000);
