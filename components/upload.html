@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="upload.css">
 
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.1/fetch.min.js"></script>
@@ -15,14 +16,18 @@
 
 <body>
 <!-- Action to include IP and port-->
+<div class="containerUpload">
     <form action="/image" method="post" enctype="multipart/form-data">
-        <input type="file" name="my-image" accept="image/*">
-        <button type="submit">Upload</button>
+        <input class="chooseFile" type="file" name="my-image" accept="image/*">
+        <button class="uploadButton" type="submit">Upload</button>
     </form>
+</div>
+
+    <a href="./index.html"><button>Go Back</button></a>
     <p id="message"></p>
     <img id="image">
 
-    <script src="main_b.js"></script>
+    <script src="upload.js"></script>
 </body>
 
 </html>

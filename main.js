@@ -3,7 +3,7 @@
 //TODO dotenv require
 const express = require('express');
 const multer = require('multer');
-const upload = multer({ dest: './uploads' });
+const upload = multer({ dest: 'components/uploads' });
 const app = express();
 const db = require('./tools/db');
 const sql = require('./tools/sql_tools');
