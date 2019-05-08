@@ -1,0 +1,49 @@
+:root {
+    --main-color: #34495E;
+}
+
+body {
+    min-height: 100vh;;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.containerUpload {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(17, 5, 5, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #FFF;
+    padding: 10px;
+    margin: 0 10px;;
+    width: 50%;
+}
+
+form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 50px auto;
+}
+
+form input {
+    margin: 10px 10px;
+    border: none;
+}
+
+form button {
+    border: none;
+    width: 33%;
+}
+
+a button {
+    border: none;
+    margin: 20px auto;
+    position: relative;
+    left: 40%;
+}

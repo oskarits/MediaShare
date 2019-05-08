@@ -3,12 +3,12 @@
 //dotenv require
 const express = require('express');
 const multer = require('multer');
-const upload = multer({ dest: './uploads' });
+const upload = multer({ dest: 'components/uploads' });
 const app = express();
 //const db = require('./tools/db');
 //const connection = db.connect();
 
-app.use(express.static('components/home'));
+app.use(express.static('components/'));
 // express.static('components/)
 // name all .html's differently
 // make the index.html the splash page showing the newest post and a summary of the site
