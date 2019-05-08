@@ -1,3 +1,7 @@
+delete database if exists oc;
+create database oc;
+use oc;
+
 create table Profile (
     user_id int AUTO_INCREMENT NOT NULL,
     email varchar(255) NOT NULL UNIQUE,
