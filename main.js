@@ -18,39 +18,6 @@ app.use('/global', express.static('./global'));
 // make the index.html the splash page showing the newest post and a summary of the site
 // remove all folders from components and make all in one folder
 
-// Passport config
-passport.serializeUser((user, done) => {
-    console.log('serialize: '+user);
-    done(null, user);
-});
-
-passport.deserializeUser((user, done) => {
-    done(null, user);
-});
-
-app.use(session({
-    secret: 'FJS',
-    resave: true,
-    saveUninitialized: true,
-    cookie: { secure: true}
-}));
-
-passport.use(new LocalStrategy(
-    (username, password, done) => {
-        console.log('User here: '+username);
-        // Replace with SQL queries
-        let user_query = "SELECT * FROM Profile WHERE username == ${username};"
-        let pass_query = "SELECT * FROM Profile WHERE password ==${password};"
-        if (userame !== user_query || password !== pass_query) { return done(null, false); }
-        return done(null, {username: username});
-    }
-));
-app.use(passport.initialize());
-app.use(passport.session());
-
-app.post('/login',
-passport.authenticate('local', { successRedirect: '/feed', failureRedirect: '/signUp.html'}));
-
 
 // Posting function
 app.post('/image',  upload.single('my-image'), (req, res) => {
@@ -62,7 +29,7 @@ app.post('/image',  upload.single('my-image'), (req, res) => {
     res.send(response);
 });
 // Adds image to database
-app.use('/image', (req, res, next) => {
+/* app.use('/image', (req, res, next) => {
     const data = [
         'post_id',
         'user_id',
@@ -74,6 +41,6 @@ app.use('/image', (req, res, next) => {
     ];
    // media insert 
    sql.insert(data, connection, res);
-});
+}); */
 
 app.listen(3000);
