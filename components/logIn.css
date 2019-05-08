@@ -96,7 +96,7 @@ form {
     .containerLogIn {
         height: 500px;
         width: 700px;
-        background-image: url('/Assets/img/thumbsUp.jpeg');
+        background-image: url('thumbsUp.jpeg');
         background-position-x: 300px;
         background-position-y: 85px;
         background-repeat: no-repeat;
