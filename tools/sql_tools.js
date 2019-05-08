@@ -1,14 +1,17 @@
 'use strict';
 
-const select = (connection) => {
+
 const time = new Date();
+const select = (connection) => {
+
 };
 // Add DBNAME 
 const insert = (data, connection ,res) => {
 // Time is unix epoch, post-time is set to del-time at creation
-//                                      vvvvvv CHECK JS VS UNIX EPOCH
 // When upvoted, we increase the del-time by 3600, so the script just checks the posts where the time is less than when the script runs
-    connection.execute('INSERT INTO DBNAME (posted_id, content, img_text, ${postDate}, no_votes, ${delHour}, no_reports) VALUES (?, ?, ?, ?, ?, ?, ?);', data, (err, results, fields) => {;
+// !! NOTE !! Time is in milliseconds due to JS being Like that 
+let postTime = time.getTime();
+    connection.execute('INSERT INTO DBNAME (user_id, content, img_text, ${postTime}, no_votes, ${postTime}, no_reports) VALUES (?, ?, ?, ?, ?, ?, ?);', data, (err, results, fields) => {
         console.log(results);
         console.log(fields);
         if (err === null) {
@@ -33,7 +36,13 @@ const getBest = (connection) => {
 
 const del = (connection) => {
     let currentTime = time.getTime();
-    connection.query('DELETE FROM DBNAME WHERE time_of_del < ${currentTime;');
+    connection.query('DELETE FROM DBNAME WHERE time_of_del < ${currentTime};');
+}
+
+const addTime = (connection, user_id) => {
+    let currentTime = time.getTime();
+    // 3600000 has to be added since JS does time in milliseconds
+    connection.execute('UPDATE DBNAME SET time_of_del = time_of_del + 3600000 WHERE user_id = ${user_id};') 
 }
 
 module.exports = {
@@ -41,4 +50,5 @@ module.exports = {
     insert: insert,
     getNew: getNew,
     getBest: getBest,
+    addTime: addTime,
 };
