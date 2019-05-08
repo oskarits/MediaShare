@@ -54,6 +54,6 @@ app.post('/image',  upload.single('my-image'), (req, res) => {
    sql.insert(data, res);
 });
 
-app.post('/logIn', pass.logIn)
+app.post('/logIn', passport.logIn)
 app.post('/signUp', passport.signUp, passport.logIn);
 app.listen(3000);
