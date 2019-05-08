@@ -20,9 +20,7 @@ passport.use(new LocalStrategy(
         let res = null;
 
         const logIn = (username, password) => {
-            console.log('here1');
             return new Promise((resolve, reject) => {
-                console.log('before sql here');
                 console.log(username);
                 sql_tools.login([username], (result) => {
                     bcrypt.compare(password, result[0].password, (err, res) => {
@@ -41,10 +39,8 @@ passport.use(new LocalStrategy(
 
         return logIn(username, password).then((result) => {
             if (result.length < 1) {
-                console.log('wrong');
                 return done(null, false);
             } else {
-                console.log('done');
                 delete result[0].password;
                 return done(null, result[0]);
             }
