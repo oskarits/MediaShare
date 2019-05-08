@@ -86,7 +86,7 @@
     justify-content: flex-end;
     align-items: center;
     height: 50vh;
-    background-image: url('/Assets/img/thumbsUpCropped.jpg');
+    background-image: url('thumbsUpCropped.jpg');
     background-repeat: no-repeat;
     background-position: top;
 }
