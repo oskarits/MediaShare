@@ -29,7 +29,7 @@ passport.deserializeUser((user, done) => {
 });
 
 app.use(session({
-    secret: '',
+    secret: 'FJS',
     resave: true,
     saveUninitialized: true,
     cookie: { secure: true}
@@ -38,7 +38,10 @@ app.use(session({
 passport.use(new LocalStrategy(
     (username, password, done) => {
         console.log('User here: '+username);
-        if (userame !== process.env.USR_NAME || password !== process.env.USR_PWD) { return done(null, false); }
+        // Replace with SQL queries
+        let user_query = "SELECT * FROM Profile WHERE username == ${username};"
+        let pass_query = "SELECT * FROM Profile WHERE password ==${password};"
+        if (userame !== user_query || password !== pass_query) { return done(null, false); }
         return done(null, {username: username});
     }
 ));
