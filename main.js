@@ -8,6 +8,7 @@ const upload = multer({ dest: 'components/uploads' });
 const db = require('./tools/db');
 const sql = require('./tools/sql_tools');
 const passport = require('passport');
+const pass = require('./tools/passport');
 const session = require('express-session')
 const bParser = require('body-parser');
 const connection = db.connect();
@@ -53,7 +54,19 @@ app.post('/image',  upload.single('my-image'), (req, res) => {
     ];
    sql.insert(data, res);
 });
+//app.post('/signUp', pass.signUp, pass.logIn);
 
-app.post('/logIn', passport.logIn)
-app.post('/signUp', passport.signUp, passport.logIn);
-app.listen(3000);
+app.post('/logIn',
+  passport.authenticate('local', {successRedirect: '/home', failureRedirect: '/logIn'}));
+    // If this function gets called, authentication was successful.
+    // `req.user` contains the authenticated user.
+//    res.redirect('/home');
+
+app.post('/signUp', pass.signUp);
+/* app.post('/signUp', 
+  passport.authenticate('local'),
+  function(req,res) {
+    res.redirect('/logIn');
+  });
+ */app.listen(3000);
+
