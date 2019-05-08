@@ -2,22 +2,40 @@
 
 //TODO dotenv require
 const express = require('express');
+require('dotenv').config();
 const multer = require('multer');
 const upload = multer({ dest: 'components/uploads' });
+<<<<<<< HEAD
 const app = express();
 const db = require('./components/tools/db');
 const sql = require('./components/tools/sql_tools');
+=======
+const db = require('./tools/db');
+const sql = require('./tools/sql_tools');
+>>>>>>> 26fba0782ed5d05545105d24cb6c67f041bceba0
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session')
-//const connection = db.connect();
+const bParser = require('body-parser');
+const connection = db.connect();
+const app = express();
 
 app.use(express.static('components/'));
 app.use('/global', express.static('./global'));
-// express.static('components/)
-// make the index.html the splash page showing the newest post and a summary of the site
-// remove all folders from components and make all in one folder
+app.use('/modules', express.static('node_modules'));
 
+app.use(session({
+    secret: 'FJS',
+    resave: true,
+    saveUninitialized: true,
+    cookie: {secure: false},
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(bParser.urlencoded({extended: true}));
+
+app.use(bParser.json());
 
 // Posting function
 app.post('/image',  upload.single('my-image'), (req, res) => {
@@ -29,18 +47,17 @@ app.post('/image',  upload.single('my-image'), (req, res) => {
     res.send(response);
 });
 // Adds image to database
-/* app.use('/image', (req, res, next) => {
+ app.use('/image', (req, res, next) => {
     const data = [
         'post_id',
-        'user_id',
+        req.user.uID,
         'content',
         'img_text',
         'no_votes',
         'time_of_del',
         'no_reports',
     ];
-   // media insert 
-   sql.insert(data, connection, res);
-}); */
+   sql.insert(data, res);
+});
 
 app.listen(3000);
