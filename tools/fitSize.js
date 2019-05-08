@@ -11,5 +11,5 @@ const magic = (file, size, newPath) => {
 };
 
 module.exports = {
-    magic = magic,
+    magic: magic,
 }
