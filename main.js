@@ -45,6 +45,7 @@ app.post('/image',  upload.single('my-image'), (req, res) => {
 });
 // All images will be this size for now
 app.use('/image', (req, res, next) => {
+    console.log('resize magic here!')
     fitSize.magic(req.file.path, 760, './components/uploads' + req.file.filename)
     .then(data => {
         next();
