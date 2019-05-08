@@ -5,14 +5,8 @@ const express = require('express');
 require('dotenv').config();
 const multer = require('multer');
 const upload = multer({ dest: 'components/uploads' });
-<<<<<<< HEAD
-const app = express();
-const db = require('./components/tools/db');
-const sql = require('./components/tools/sql_tools');
-=======
 const db = require('./tools/db');
 const sql = require('./tools/sql_tools');
->>>>>>> 26fba0782ed5d05545105d24cb6c67f041bceba0
 const passport = require('passport');
 const session = require('express-session')
 const bParser = require('body-parser');
