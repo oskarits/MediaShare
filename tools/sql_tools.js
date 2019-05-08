@@ -1,10 +1,8 @@
 'use strict';
-
-
+const db = require('./db');
 const time = new Date();
-const select = (connection) => {
 
-};
+
 // Add DBNAME 
 const insert = (data, connection ,res) => {
 // Time is unix epoch, post-time is set to del-time at creation
@@ -23,32 +21,30 @@ let postTime = time.getTime();
     });
 };
 
-// FOR BOTH: Get all the images but limit 20 with javascript?
-// Get 20 images with the newest postTime for normal screen
-const getNew = (connection) => {
-    connection.query('')
+const login = (data, callback) => {
+    db.connect().query("SELECT * FROM oc WHERE email = ?;", data, (err, results, fields) => {
+        console.log(err);
+        callback(results);
+    });
 };
 
-// Get 20 oldest images with the newsst
-const getBest = (connection) => {
-    connection.query('')
-}
-
-const del = (connection) => {
-    let currentTime = time.getTime();
-    connection.query('DELETE FROM DBNAME WHERE time_of_del < ${currentTime};');
-}
-
+const register = (data, next) => {
+    db.connect().query("INSERT INTO oc (email, username, password) VALUES (?, ?, ?);", data, (err, results, fields) => {
+        console.log(err);
+        next();
+    });
+};
 const addTime = (connection, user_id) => {
     let currentTime = time.getTime();
     // 3600000 has to be added since JS does time in milliseconds
     connection.execute('UPDATE DBNAME SET time_of_del = time_of_del + 3600000 WHERE user_id = ${user_id};') 
 }
 
+//getNew getBest
+
 module.exports = {
-    select: select,
     insert: insert,
-    getNew: getNew,
-    getBest: getBest,
     addTime: addTime,
+    login: login,
+    register: register,
 };
