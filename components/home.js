@@ -1,31 +1,33 @@
-const main = document.getElementsByClassName('image');
-const myRequest = new Request('images.json');
+// const image = document.getElementById('image');
 
-fetch(myRequest)
+// fetch('./uploads/', options)
+//     .then(response => {
+//         return response.json();
+//     }).then(json => {
+//         console.log(json);
+//         image.src = './uploads/' + json.file.filename;
+//     });
+
+
+const main = document.getElementById('imageFeed');
+
+fetch('/uploads/')
 .then(function(response) {
     return response.json();
 }).then((images) => {
     for (let i = 0; i < images.length; i++) {
         const img = document.createElement('img');
-        const imgPath = './img/original/' + `${images[i].mediaUrl}`;
+        const imgPath = './uploads/' + `${images[i]}`;
         img.src = imgPath;
-        // img.alt = `${images[i].mediaTitle}`;
 
-        // const caption = document.createElement('figcaption');
-        // caption.innerHTML = `${images[i].mediaTitle}`;
+        const imageCard = document.createElement('div class="imageCard"');
+        
+        const image = document.createElement('div class="image"');
 
-        // const figure = document.createElement('figure');
-        // const title = document.createElement('h3');
-        // title.innerHTML = `${images[i].mediaTitle}`;
+        image.appendChild(img)
+        imageCard.appendChild(image);
 
-        // figure.appendChild(img);
-        // figure.appendChild(caption);
-        // figure.appendChild(title);
 
-        main.appendChild(img);
+        main.appendChild(imageCard);
     };
-
-
-        // 
-    
 });
