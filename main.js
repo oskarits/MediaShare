@@ -8,8 +8,10 @@ const upload = multer({ dest: 'components/uploads' });
 const db = require('./tools/db');
 const sql = require('./tools/sql_tools');
 const passport = require('passport');
+const pass = require('./tools/passport');
 const session = require('express-session')
 const bParser = require('body-parser');
+const fitSize = require('./tools/fitSize');
 const connection = db.connect();
 const app = express();
 
@@ -38,10 +40,20 @@ app.post('/image',  upload.single('my-image'), (req, res) => {
         message: 'File Upload Complete',
         file: req.file
     };
+    console.log(response);
     res.send(response);
 });
+// All images will be this size for now
+app.use('/image', (req, res, next) => {
+    console.log('resize magic here!')
+    fitSize.magic(req.file.path, 760, './components/uploads' + req.file.filename)
+    .then(data => {
+        next();
+    });
+});
 // Adds image to database
- app.use('/image', (req, res, next) => {
+app.use('/image', (req, res, next) => {
+    console.log('sql add here!')
     const data = [
         'post_id',
         req.user.uID,
@@ -53,5 +65,19 @@ app.post('/image',  upload.single('my-image'), (req, res) => {
     ];
    sql.insert(data, res);
 });
+//app.post('/signUp', pass.signUp, pass.logIn);
 
-app.listen(3000);
+app.post('/logIn',
+  passport.authenticate('local', {successRedirect: '/home.html', failureRedirect: '/logIn'}));
+    // If this function gets called, authentication was successful.
+    // `req.user` contains the authenticated user.
+//    res.redirect('/home');
+
+app.post('/signUp', pass.signUp);
+/* app.post('/signUp', 
+  passport.authenticate('local'),
+  function(req,res) {
+    res.redirect('/logIn');
+  });
+ */app.listen(3000);
+

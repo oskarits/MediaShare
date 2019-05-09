@@ -1,5 +1,5 @@
 'use strict';
-
+/* 
 const form = document.querySelector('form');
 // HTML contains element 'message'. This is used to show the server's response
 // Select it and save it as a variable/object
@@ -31,5 +31,25 @@ const upload = (evt) => {
 };
 
 // make an event listener which calls upload function when the form is submitted
+ */
+const frm = document.querySelector('form');
+
+const sendForm = (evt) => {
+  evt.preventDefault();
+  const fd = new FormData(frm);
+  const settings = {
+    method: 'post',
+    body: fd,
+  };
+
+  fetch('./image', settings).then((response) => {
+    return response.json();
+  }).then((json) => {
+    console.log(json);
+    // update list
+    getData();
+    frm.reset();
+  });
+};
 
 form.addEventListener('submit', upload);

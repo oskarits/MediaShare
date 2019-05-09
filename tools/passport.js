@@ -21,11 +21,15 @@ passport.use(new LocalStrategy(
 
         const logIn = (username, password) => {
             return new Promise((resolve, reject) => {
-                sql_tools.login([username], (results) => {
+                console.log(username);
+                sql_tools.login([username], (result) => {
                     bcrypt.compare(password, result[0].password, (err, res) => {
                         if (res) {
-                            resolve(results);
+                            console.log('OK here');
+                            resolve(result);
                         } else {
+                            console.log('not ok here');
+                            console.log(err);
                             reject(err);
                         }
                     });
@@ -33,14 +37,12 @@ passport.use(new LocalStrategy(
             });
         };
 
-        return logIn(username, password).then((results) => {
-            if (results.length < 1) {
-                console.log('wrong');
+        return logIn(username, password).then((result) => {
+            if (result.length < 1) {
                 return done(null, false);
             } else {
-                console.log('done');
                 delete result[0].password;
-                return done(null, results[0]);
+                return done(null, result[0]);
             }
         }).catch(err => {
             console.log('err', err);
@@ -48,7 +50,7 @@ passport.use(new LocalStrategy(
     }));
 
 
-const login = (req, res, next) => {
+const logIn = (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
         if (err) {
             return next(err);
@@ -71,7 +73,7 @@ const signUp = (req, res, next) => {
     const salt = 11;
     bcrypt.hash(req.body.password, salt, (err, hash) => {
         console.log('this is your hash sir', hash);
-        sql_tools.register([req.body.username, hash], next);
+        sql_tools.register([req.body.email, req.body.username, hash], next);
     });
 };
 

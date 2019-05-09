@@ -31,14 +31,14 @@ postTime = postTime * 3600;
 };
 
 const login = (data, callback) => {
-    db.connect().query("SELECT * FROM Profile WHERE email = ?;", data, (err, results, fields) => {
+    db.connect().query("SELECT * FROM Profile WHERE username = ?;", data, (err, results, fields) => {
         console.log(err);
         callback(results);
     });
 };
 
 const register = (data, next) => {
-    db.connect().query("INSERT INTO Profile (email, username, password) VALUES (?, ?, ?);", data, (err, results, fields) => {
+    db.connect().query('INSERT INTO Profile (email, username, password) VALUES (?, ?, ?);', data, (err, results, fields) => {
         console.log(err);
         next();
     });
