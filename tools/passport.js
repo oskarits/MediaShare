@@ -62,6 +62,8 @@ const logIn = (req, res, next) => {
             if (err) {
                 return next(err);
             }
+            console.log('log1', req.user);
+            console.log('log2' ,req.user.uID);
             return res.send(req.user);
         });
     });
@@ -70,17 +72,19 @@ const logIn = (req, res, next) => {
 // Register
 const signUp = (req, res, next) => {
     console.log(req.body);
+
     const salt = 11;
     bcrypt.hash(req.body.password, salt, (err, hash) => {
         console.log('this is your hash sir', hash);
         sql_tools.register([req.body.email, req.body.username, hash], next);
     });
-    return res.send(200);
+    res.sendStatus(200);
 };
 
 // Check if user is logged in 
 const isLogged = (req, res, next) => {
     if (req.isAuthenticated()) {
+        console.log('islog1', req.user.uID);
         next();
     } else {
         console.log(req.user);

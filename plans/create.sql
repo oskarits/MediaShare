@@ -15,9 +15,9 @@ create table Content (
     user_id int UNIQUE NOT NULL,
     content varchar(255) NOT NULL,
     img_text varchar(500) NOT NULL,
-    post_time DATETIME NOT NULL,
+    post_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     no_votes int NOT NULL,
-    time_of_del DATETIME NOT NULL,
+    time_of_del TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     no_reports int NOT NULL,
     primary key(post_id),
     foreign key(user_id) references Profile(user_id)

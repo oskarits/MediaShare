@@ -11,14 +11,15 @@
 
 // const main = document.getElementById('imageFeed');
 
-// fetch('./uploads/')
-// .then(function(response) {
-//     return response.json();
-// }).then((images) => {
-//     for (let i = 0; i < images.length; i++) {
-//         const img = document.createElement('img');
-//         const imgPath = './uploads/' + `${images[i]}`;
-//         img.src = imgPath;
+fetch('./uploads/')
+.then(function(response) {
+    return response.json();
+}).then((images) => {
+    for (let i = 0; i < images.length; i++) {
+        const img = document.createElement('img');
+        const imgPath = './uploads/' + `${images[i]}`;
+        img.src = imgPath;
+    }
 
 //         const imageCard = document.createElement('div class="imageCard"');
         
