@@ -18,6 +18,7 @@ const insert = (data, res) => {
 // !! NOTE !! Time is in milliseconds due to JS being Like that 
 let postTime = time.getTime();
 postTime = postTime * 3600;
+console.log('${postTime}');
     db.connect().execute('INSERT INTO Content (user_id, content, img_text, ${postTime}, no_votes, ${postTime}, no_reports) VALUES (?, ?, ?, ?, ?, ?, ?);', data, (err, results, fields) => {
         console.log(results);
         console.log(fields);

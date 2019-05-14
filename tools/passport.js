@@ -75,6 +75,7 @@ const signUp = (req, res, next) => {
         console.log('this is your hash sir', hash);
         sql_tools.register([req.body.email, req.body.username, hash], next);
     });
+    return res.send(200);
 };
 
 // Check if user is logged in 
