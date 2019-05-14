@@ -1,6 +1,9 @@
-delete database if exists oc;
+drop database if exists oc;
 create database oc;
 use oc;
+drop table if exists oc.Profile;
+drop table if exists oc.Content;
+
 
 create table Profile (
     user_id int AUTO_INCREMENT NOT NULL,
@@ -14,13 +17,9 @@ create table Content (
     post_id int AUTO_INCREMENT NOT NULL ,
     user_id int UNIQUE NOT NULL,
     content varchar(255) NOT NULL,
-    img_text varchar(500) NOT NULL,
     post_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    no_votes int NOT NULL,
     time_of_del TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    no_reports int NOT NULL,
     primary key(post_id),
     foreign key(user_id) references Profile(user_id)
 );
 
--- Table for user profiles

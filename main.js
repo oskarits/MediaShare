@@ -57,13 +57,12 @@ app.use('/image', (req, res) => {
     console.log('sql add here!')
     console.log(req.user.uID);
     const data = [
-        'post_id',
         //        req.user.uID,
-        'asdf',
+        //TODO HARDCODED CHANGE THIS
+        1,
         'content',
-        'img_text',
-        'no_votes',
     ];
+    console.log('user?' ,req.user.uID);
     sql.insert(data, res);
 });
 //app.post('/signUp', pass.signUp, pass.logIn);
