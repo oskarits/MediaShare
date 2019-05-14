@@ -1,7 +1,9 @@
-/* AUTHORTS
+/* AUTHORS
 Oskari Sieranen
 Tuomas Paavolainen
 Otto Söderlund */
+
+
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Raleway');
 
 :root {
@@ -57,10 +59,40 @@ button {
     bottom: 30px;
     left: 0;
     background-color: var(--main-color);
-    height: 0;
+    /* height: 0; */
     width: 100%;
-    transition: all ease .4s;
     z-index: 99999;
+    opacity: 0;
+    animation: navbar 300ms ease-in-out forwards;
+}
+
+.reverse {
+    animation: navbar-reverse 300ms ease-in-out forwards;
+    opacity: 1;
+}
+
+@keyframes navbar {
+    0% {
+        opacity: 0;
+        transform: rotateY(-90deg) translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateY(0) translateY(0);
+    }
+}
+
+@keyframes navbar-reverse {
+    0% {
+        opacity: 1;
+        transform: rotateY(0) translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: rotateY(-90deg) translateY(30px);
+    }
 }
 
 #navbar a {
@@ -89,7 +121,6 @@ button {
     flex-flow: row wrap;
     justify-content: center;
     z-index: 99999;
-    transition: all ease .4s;
 }
 
 .iconbar {
