@@ -65,7 +65,6 @@ button {
     opacity: 0;
     animation: navbar 300ms ease-in-out forwards;
 }
-
 .reverse {
     animation: navbar-reverse 300ms ease-in-out forwards;
     opacity: 1;
@@ -100,14 +99,14 @@ button {
 }
 
 #navbar li {
-    margin: 10px 0;
+    /* margin: 10px 0; */
     display: block;
     text-decoration: none;
 }
-
+/* 
 #navbar ul {
     padding: 0;
-}
+} */
 
 .bottomNav {
     padding: 5px 0;
@@ -132,14 +131,54 @@ button {
     margin: 5px;
 }
 
-.second {
-    width: 25px;
+.first-animate {
+    transform: rotate(0);
+    animation: cross-first 600ms ease-in-out forwards;
+    transform-origin: right center;
+}
+
+.second-animate {
+    transform: rotate(0);
+    animation: cross-second 600ms ease-in-out forwards;
+    /* transform-origin: center; */
+}
+
+.third-animate {
+    
+    /* width: 25px; */
+    animation: slide 600ms ease-in-out forwards;
+}
+
+@keyframes slide {
+    100% {
+        transform: translateX(-1000px);
+    }
+}
+
+@keyframes cross-first {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(-45deg) translate(0, -2.5px) scalex(1.1);
+    }
+}
+
+@keyframes cross-second {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(45deg) translate(0, -1.5px) scalex(1.1);
+    }
 }
 
 #burger {
-   
     border: 1px solid white;
     border-radius: 5px;
+    padding: 2px;
 }
 
 #closeBtn {
