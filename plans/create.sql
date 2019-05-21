@@ -17,8 +17,8 @@ create table Content (
     post_id int AUTO_INCREMENT NOT NULL ,
     user_id int UNIQUE NOT NULL,
     content varchar(255) NOT NULL,
-    post_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    time_of_del TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    post_time int NOT NULL,
+    time_of_del int NOT NULL,
     primary key(post_id),
     foreign key(user_id) references Profile(user_id)
 );

@@ -1,5 +1,8 @@
 # Website for sharing original content, where unliked content is scrapped in an hour
 
+## Requires node 12
+
+Using something like `nvm` to manage 
 ## To setup
 
 * Git Clone
@@ -8,4 +11,4 @@
 
 ## Link to final project 
 (Requires Metropolia VPN)
-10.114.32.1
+10.114.32.44

@@ -17,7 +17,9 @@ const insert = (data, res) => {
 // When upvoted, we increase the del-time by 3600, so the script just checks the posts where the time is less than when the script runs
 // !! NOTE !! Time is in milliseconds due to JS being Like that 
 let postTime = time.getTime();
-    db.connect().execute(`insert into Content (user_id, content) values (?, ?);`, data, (err, results, fields) => {
+postTime = postTime * 0.001;
+postTime = Math.trunc(postTime);
+    db.connect().execute(`insert into Content (user_id, content, post_time, time_of_del) values (?, ?, ${postTime}, ${postTime});`, data, (err, results, fields) => {
         console.log(results);
         console.log(fields);
         if (err === null) {
